@@ -1,0 +1,132 @@
+title: "Project 2 - An Exporation of the Correlation between Price, Rating and Regions of Wines"
+author: "Sebastien Tillett, Tanay Sagrolikar, Jayanthi Ramiah, Sina Karimi"
+output: html_document
+---
+Executive Summary
+----------------
+
+
+
+
+ *Loading in our libraries and the Dataset*
+```{r}
+library(tidyr)
+library("dplyr")
+library(readxl)
+library(ggplot2)
+data = read.csv("data/P2, Student_data_standard.csv")
+data2 = read.csv("data/P2, Student_data_advanced.csv")
+```
+
+
+*Classification of each Variable*
+
+```{r}
+#Dimensions of the data#
+dim(data)
+#Structure of the data#
+str(data)
+
+#Dimensions of the data#
+dim(data2)
+#Structure of the data#
+str(data2)
+```
+
+
+* **Year**: The year studied (2012-2017, both semesters combiend).
+* **Domestic/Intl**: The country that the wine is from
+* **Mode**: A few sentences from a sommelier describing the wine's taste, smell, look, feel, etc.
+* **Gender**: The vineyard within the winery where the grapes that made the wine are from
+* **Mode**: The number of points WineEnthusiast rated the wine on a scale of 1-100 
+* **Age**: The cost for a bottle of the wine
+* **Unit of Study**: The province or state that the wine is from
+* **Unit of Study Level**: The wine growing area in a province or state (ie Napa Valley)
+* **Unit of Study Grade**: Sometimes there are more specific regions specified within a wine growing area (ie Rutherford inside the Napa Valley)
+* **Count**: Name of the person who tasted and reviewed the wine
+
+Year: The academic year in which the unit of study was run. This is an integer between 2012 and 2017. Both semesters 1 and 2 have been combined together.
+Domestic/Intl: Whether the student is a domestic or an international student. “D” denotes a domestic student and “I” denotes an international student.
+Gender: The gender of the student. “M” denotes male students and “F” denotes female students. To preserve anonymity, students who identify as neither male nor female have been coded as female. This is the same approach that is used by the Department of Education when reporting aggregated student statistics: see the notes on ‘Gender’ at http://highereducationstatistics.education.gov.au/DataNotes.aspx
+Mode: Whether the student is full time or part time. Full time is defined as taking 18 or more credit points in the semester in which the student took the unit of study.
+Age: The age of the student at the time that they undertook the unit of study. This is reported as one of four bands:
+18 and under
+19-21
+22-25
+Over 25
+Unit of Study: The “name” of the unit of study. To preserve anonymity, this is not the actual unit of study code for the unit but rather a made-up identifier such as “Unit A”, “Unit B” and so forth. You can assume that each of these identifiers relate to a junior unit of study offered by the School of Mathematics and Statistics between 2012 and 2017.
+Unit of Study Level: The level of the unit of study – either fundamental, mainstream or advanced.
+Unit of Study Grade: The final grade achieved by the student in the unit of study:
+FA: Fail (0-49)
+PS: Pass (50-64)
+CR: Credit (65-74)
+DI: Distinction (75-84)
+HD: High Distinction (85-100)
+Grades other than these five descriptors (for example, discontinuations, withdrawals, absent fails and the like) have been removed from the dataset to preserve anonymity.
+Count: The number of grades with the preceding attributes. 
+
+
+
+...
+
+
+Jay
+##Part 1: Comparison between Gender and Grades, for a specific Unit of Study over the years 2012 - 2017?
+#
+```{r}
+
+```
+
+#
+```{r}
+
+```
+
+#
+```{r}
+
+```
+
+
+Tanay
+##Part 2: 
+#
+```{r}
+
+```
+
+#
+```{r}
+
+```
+
+#
+```{r}
+
+```
+
+
+Sina
+##Part 3:
+#
+```{r}
+
+```
+
+#
+```{r}
+
+```
+
+#
+```{r}
+
+```
+
+
+
+
+
+
+
+
