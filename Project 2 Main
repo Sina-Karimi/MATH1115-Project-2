@@ -97,6 +97,14 @@ ggplot(proportion, aes(x=Year, y=Prop)) + geom_point() + geom_smooth(method = lm
 
 #Is this difference statistically significant 
 #TODO
+#Linear Model
+l = lm(notFailed$NF~total$ALL)
+
+#Adding residual column
+proportion$r <- resid(l)
+
+ggplot(proportion,  aes(x=Prop, y=r)) + geom_point()
+
 ```
 
 
