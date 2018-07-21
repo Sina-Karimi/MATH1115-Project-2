@@ -73,20 +73,30 @@ Jay
 
 Tanay
 ##Part 2: 
-# Is there a relationship between the proportion of passes in fundamental units and the year those units were taught
+#Is there a relationship between the proportion of people who didn't fail in fundamental units and the year those units were taught
 ```{r}
+#NOTE: work in progress, subject to change
 
+#Exploration of Data
 
-```
+fundamental = data %>% filter(Unit.of.Study.Level == "Fundamental")
 
-#
-```{r}
+notFailed = fundamental %>% filter(Unit.of.Study.Grade != "FA") %>% group_by(Year) %>% summarise(NF = sum(Count))
 
-```
+total = fundamental %>% group_by(Year) %>% summarise(ALL = sum(Count))
 
-#
-```{r}
+temp = merge(notFailed, total, by = "Year")
 
+proportion = temp %>% group_by(Year) %>% summarise(Prop = NF/ALL)
+
+ggplot(proportion, aes(x=Year, y=Prop)) + geom_point() + geom_smooth()
+
+#Is this relationship linear?
+#TODO
+ggplot(proportion, aes(x=Year, y=Prop)) + geom_point() + geom_smooth(method = lm)
+
+#Is this difference statistically significant 
+#TODO
 ```
 
 
