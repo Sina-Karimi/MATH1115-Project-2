@@ -134,10 +134,5 @@ abline(a=17.938, b=-0.003, col="Blue", lwd=3)
 
 ```
 
-
-
-
-
-
-
-
+**Conclusions**
+We picked the 2 variables to investigate what happens to the number of students enrolled in Unit A every year. I was not expecting any dramatic increase or decrease, which was the case, but the ggplot from our first question suggests that the trend for the amount of students increased every year slightly, with the exception of 2015. This could be due to the higher intake of International Students. We next wanted to find out if the data was linear. We were expecting a linear trend and there was a slight curved increase but mostly linear.
