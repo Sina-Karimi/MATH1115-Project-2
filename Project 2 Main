@@ -109,18 +109,27 @@ ggplot(proportion,  aes(x=Prop, y=r)) + geom_point()
 
 
 Sina
-##Part 3: What is the student count of each unit level (Fundementals, Mainstream, Advanced) in unit A?
-# What is the relationships between the unit levels (in unit A) and the number of students enrolled?
+##3:3. *What is the student count for each year in unit A?*
+# What is the relationships between the years (in unit A) and the number of students enrolled?
+
 ```{r}
-ggplot(data, aes(x= Unit.of.Study.Level, y=Count)) + geom_bar(stat = "identity") + theme_bw() + labs(title ="Number of students in each level", x = "Unit levels", y = "Count", fill = "Levels") + scale_fill_brewer(palette = "Blues") + theme(plot.title = element_text(color="#E69F00", size=19, face="bold.italic"), axis.title.x = element_text(color="#009E73", size=12), axis.title.y = element_text(color="#009E73", size=12), legend.background = element_rect(fill="lightblue"))
+#Filtering data to only consider the students studying Unit A
+filter1 = filter(standard, Unit.of.Study == 'Unit A')
+
+ggplot(filter1, aes(x= ï..Year, y= Count)) + geom_bar(stat = "identity") + theme_bw() + labs(title ="Number of students in each level", x = "Unit levels", y = "Count", fill = "Levels") + theme(plot.title = element_text(color="#E69F00", size=19, face="bold.italic"), axis.title.x = element_text(color="#009E73", size=12), axis.title.y = element_text(color="#009E73", size=12))
 ```
 
 # Is this relationship linear?
 ```{r}
-
+plot(standard$ï..Year, standard$Count, main="Count vs Year")
+Count = standard$Count
+Year = standard$ï..Year
+mod = lm(Count ~ Year)
+summary(mod)
+abline(a=17.938, b=-0.003, col="Blue", lwd=3)
 ```
 
-# Is the difference statistically significant?
+# Is the Count of students independent of the year of their enrolment? Tested at p=0.05 to see if the results are statistically significant?
 ```{r}
 
 ```
